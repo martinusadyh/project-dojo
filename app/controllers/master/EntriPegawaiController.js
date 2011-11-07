@@ -1,6 +1,7 @@
 dojo.provide('app.controllers.master.EntriPegawaiController');
 
-dojo.require('app.views.master.EntriPegawai');
+dojo.require('app.views.master.EntriPegawaiPanel');
+dojo.require('app.views.custom.Toolbar');
 
 dojo.require('dijit.form.Button');
 dojo.require('dijit.form.TextBox');
@@ -8,12 +9,12 @@ dojo.require('dijit.layout.ContentPane');
 dojo.require('dijit.TitlePane');
 dojo.require('dijit.layout.BorderContainer');
 
-app.controllers.master.EntriPegawaiController = {
+dojo.declare('app.controllers.master.EntriPegawaiController', null, {
     test: function() {
-        console.log('Initialize entriPegawaiPanel');
-        var entriPegawai = new app.views.master.EntriPegawai();
+        var entriPegawai = new app.views.master.EntriPegawaiPanel();
+        //var entriPegawai = new app.views.master.form.EntriPegawaiForm();
         
         var mainPanel = dijit.byId('mainPanel');
         mainPanel.addChild(entriPegawai);
     }
-};
+});

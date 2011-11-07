@@ -2,8 +2,13 @@ dojo.provide('app.controllers.BaseController');
 
 dojo.require('app.controllers.master.EntriPegawaiController');
 
-app.controllers.BaseController = {
+dojo.declare('app.controllers.BaseController', null, {
+
+    pegawaiController: null,
+    
     init: function() {
+        this.pegawaiController = new app.controllers.master.EntriPegawaiController();
+        
         this.startup();
     },
     
@@ -38,13 +43,13 @@ app.controllers.BaseController = {
         console.log('menu logout');
     },
     menuEntriPegawai: function() {
-        app.controllers.master.EntriPegawaiController.test();
+        this.pegawaiController.test();
     },
     menuEntriHariLibur: function() {
-        var pegawaiPanel = dijit.byId('entriPegawaiPanel');
+        //var pegawaiPanel = dijit.byId('entriPegawaiPanel');
         
-        if (pegawaiPanel != null) {
-            pegawaiPanel.setPegawaiNameAttr('martin');
-        }
+        //if (pegawaiPanel != null) {
+            //pegawaiPanel.setPegawaiNameAttr('martin');
+        //}
     }
-};
+});
