@@ -1,0 +1,30 @@
+<html>
+    <head>
+        <link rel="stylesheet" type="text/css" href="css/app.css" />
+        <link rel="stylesheet" type="text/css" href="lib/dijit/themes/soria/soria.css" />
+    </head>
+    <body class="soria">
+        <!-- Prepare main container -->
+        <div id="appContainer"></div>
+        
+        <script>
+            var dojoConfig = {
+                isDebug: true,
+                //parseOnLoad: true,
+                modulePaths: {
+                    app: '../../app',
+                    dbp: '../../dbp'
+                }
+            }
+        </script>
+        
+        <script src="lib/dojo/dojo.js"></script>
+        
+        <script>
+            // call base js 
+            dojo.ready(function() {
+                dojo.require("app.views.base");
+            });
+        </script>
+    </body>
+</html>
