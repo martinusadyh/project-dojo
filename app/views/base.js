@@ -79,5 +79,6 @@ dojo.ready(function() {
     mainContainer.placeAt('appContainer');
     mainContainer.startup();
     
-    app.controllers.BaseController.init();
+    var baseController = new app.controllers.BaseController();
+    baseController.init();
 });
