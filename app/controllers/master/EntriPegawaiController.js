@@ -11,10 +11,10 @@ dojo.require('dijit.layout.BorderContainer');
 
 dojo.declare('app.controllers.master.EntriPegawaiController', null, {
     test: function() {
-        var entriPegawai = new app.views.master.EntriPegawaiPanel();
-        //var entriPegawai = new app.views.master.form.EntriPegawaiForm();
+        var entriPegawai = new app.views.master.EntriPegawaiPanel('Pegawai');
+        var p = entriPegawai.getMainPanel();
         
         var mainPanel = dijit.byId('mainPanel');
-        mainPanel.addChild(entriPegawai);
+        mainPanel.addChild(p);
     }
 });
