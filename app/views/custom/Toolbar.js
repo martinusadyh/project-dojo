@@ -14,8 +14,32 @@ dojo.declare('app.views.custom.Toolbar', [dijit.Toolbar], {
     saveBtn: 'Save',
     cancelBtn: 'Cancel',
     region: 'top',
-
+    
     templateString: dojo.cache('app.views.templates', 'Toolbar.html'),
     
-    widgetsInTemplate: true
+    widgetsInTemplate: true,
+
+    postCreate: function() {
+        this.inherited(arguments);
+    },
+    
+    addAction: function() {
+        console.log('[app.views.custom.Toolbar] Add Action');
+    },
+
+    editAction: function() {
+        console.log('[app.views.custom.Toolbar] Edit Action');
+    },
+
+    delAction: function() {
+        console.log('[app.views.custom.Toolbar] Delete Action');
+    },
+
+    saveAction: function() {
+        console.log('[app.views.custom.Toolbar] Save Action');
+    },
+
+    cancelAction: function() {
+        console.log('[app.views.custom.Toolbar] Cancel Action');
+    }
 });
