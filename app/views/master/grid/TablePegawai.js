@@ -1,6 +1,5 @@
 dojo.provide('app.views.master.grid.TablePegawai');
 
-//dojo.require('dojox.grid.EnhancedGrid');
 dojo.require('dojox.grid.DataGrid');
 dojo.require('dojox.grid.enhanced.plugins.NestedSorting');
 dojo.require('dojo.data.ItemFileWriteStore');
@@ -36,6 +35,9 @@ dojo.declare('app.views.master.grid.TablePegawai', null, {
 			store: storePegawai,
 			loadingMessage: 'Loading data ...',
 			selectionMode: 'single',
+			onRowClick: function(e) {
+				dojo.publish('rowclicktblPegawai', [e.rowIndex]);
+			},
 			structure: layout,
 			plugins: {
 				nestedSorting: true

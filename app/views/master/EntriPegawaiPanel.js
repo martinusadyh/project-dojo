@@ -3,6 +3,7 @@ dojo.provide('app.views.master.EntriPegawaiPanel');
 dojo.require('dijit.layout.ContentPane');
 dojo.require('dijit.layout.BorderContainer');
 dojo.require('dojox.grid.DataGrid');
+dojo.require('dojox.form.Manager');
 
 dojo.require('app.views.custom.Toolbar');
 dojo.require('app.views.master.form.EntriPegawaiForm');
@@ -29,9 +30,18 @@ dojo.declare('app.views.master.EntriPegawaiPanel', null, {
 			idCancelBtn: 'idCancelBtnPegawai'
 		});
 		
+		// i think, we need create this table using template method. 
 		this.pegawaiTable = new app.views.master.grid.TablePegawai().getTablePegawai();
 		
-		this.form = new app.views.master.form.EntriPegawaiForm();
+		// TODO : 
+		// This form is a just widget not truly form. We lack in form
+		// validation, how we must handle *required* textfield ? :(
+		this.form = new app.views.master.form.EntriPegawaiForm({
+			id: 'formPegawaiPanel',
+			idPegawaiName: 'txtNamaPegawai',
+			idAlamat: 'txtAlamatPegawai'
+		});
+		
         var contentPane = new dijit.layout.ContentPane({
             region: 'center',
             content: this.form

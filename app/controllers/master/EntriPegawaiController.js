@@ -29,6 +29,18 @@ dojo.declare('app.controllers.master.EntriPegawaiController', null, {
 		dojo.subscribe('idSaveBtnPegawai', this.saveAction);
 		
 		dojo.subscribe('idCancelBtnPegawai', this.cancelAction);
+		
+		dojo.subscribe('rowclicktblPegawai', this.rowclick);
+	},
+	
+	rowclick: function(selectedRow) {
+		var tbl = dijit.byId('tblPegawai');
+		var pegawaiName = tbl.store.getValue(tbl.getItem(selectedRow), 'userName');
+		var alamatPegawai = tbl.store.getValue(tbl.getItem(selectedRow), 'address');
+		
+		// trying to set value on custom widget
+		dojo.byId('txtNamaPegawai').value = pegawaiName;
+		dojo.byId('txtAlamatPegawai').value = alamatPegawai;
 	},
 	
 	addAction: function() {
@@ -41,6 +53,9 @@ dojo.declare('app.controllers.master.EntriPegawaiController', null, {
 		console.log('Del Pegawai Controller');
 	},
 	saveAction: function() {
+		//TODO:
+		// Find howto extends dijit.form._FormWidget to get truly
+		// form in Dojo. For validation purpose.
 		console.log('Save Pegawai Controller');
 	},
 	cancelAction: function() {

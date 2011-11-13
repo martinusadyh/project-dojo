@@ -4,11 +4,15 @@ dojo.require('dijit._Widget');
 dojo.require('dijit._Templated');
 dojo.require('dijit.form._FormWidget');
 dojo.require('dijit.layout.ContentPane');
+dojo.require('dojox.form.Manager');
 
 dojo.require('dijit.form.TextBox');
 
 dojo.declare('app.views.master.form.EntriPegawaiForm', [dijit._Widget, dijit._Templated], {
     region: 'center',
+    id: 'idForm',
+    idPegawaiName: '',
+    idAlamat: '',
     pegawaiName: '',
     alamat: null,
     widgetsInTemplate: true,
