@@ -9,37 +9,48 @@ dojo.require('dijit.form.Button');
 
 dojo.declare('app.views.custom.Toolbar', [dijit.Toolbar], {
     addBtn: 'Add',
+    idAddBtn: 'idAddBtn',
     editBtn: 'Edit',
+    idEditBtn: 'idEditBtn',
     delBtn: 'Delete',
+    idDelBtn: 'idDelBtn',
     saveBtn: 'Save',
+    idSaveBtn: 'idSaveBtn',
     cancelBtn: 'Cancel',
+    idCancelBtn: 'idCancelBtn',
     region: 'top',
     
     templateString: dojo.cache('app.views.templates', 'Toolbar.html'),
     
     widgetsInTemplate: true,
-
-    postCreate: function() {
-        this.inherited(arguments);
-    },
     
     addAction: function() {
-        console.log('[app.views.custom.Toolbar] Add Action');
+		dojo.publish(this.idAddBtn, 
+			console.log('[Toolbar] Add Action (do nothing in parent class)')
+		);
     },
-
+    
     editAction: function() {
-        console.log('[app.views.custom.Toolbar] Edit Action');
+        dojo.publish(this.idEditBtn, 
+			console.log('[Toolbar] Edit Action (do nothing in parent class)')
+		);
     },
 
     delAction: function() {
-        console.log('[app.views.custom.Toolbar] Delete Action');
+        dojo.publish(this.idDelBtn, 
+			console.log('[Toolbar] Delete Action (do nothing in parent class)')
+		);
     },
 
     saveAction: function() {
-        console.log('[app.views.custom.Toolbar] Save Action');
+        dojo.publish(this.idSaveBtn, 
+			console.log('[Toolbar] Save Action (do nothing in parent class)')
+		);
     },
 
     cancelAction: function() {
-        console.log('[app.views.custom.Toolbar] Cancel Action');
+        dojo.publish(this.idCancelBtn, 
+			console.log('[Toolbar] Cancel Action (do nothing in parent class)')
+		);
     }
 });

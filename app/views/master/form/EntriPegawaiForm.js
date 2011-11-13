@@ -7,7 +7,6 @@ dojo.require('dijit.layout.ContentPane');
 
 dojo.require('dijit.form.TextBox');
 
-//dojo.declare('app.views.master.form.EntriPegawaiForm', [dijit.layout.ContentPane], {
 dojo.declare('app.views.master.form.EntriPegawaiForm', [dijit._Widget, dijit._Templated], {
     region: 'center',
     pegawaiName: '',

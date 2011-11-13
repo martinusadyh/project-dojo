@@ -43,7 +43,7 @@ dojo.declare('app.controllers.BaseController', null, {
         console.log('menu logout');
     },
     menuEntriPegawai: function() {
-        this.pegawaiController.test();
+        this.pegawaiController.showEntriPegawaiPanel();
     },
     menuEntriHariLibur: function() {
         //var pegawaiPanel = dijit.byId('entriPegawaiPanel');
